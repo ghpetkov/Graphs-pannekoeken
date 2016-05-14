@@ -9,7 +9,8 @@ function xU = fg_symmGraph_10( x )
 % OUTPUT:
 %   xU- induced UnDirected graph connectivity matrix
 %   Detailed explanation goes here
-    y = triu(x);    z = triu(x');
-    U = max(y,z);   xU = U+U';
+    A = triu(x);    B = triu(x');    
+    U = bsxfun(@max,A,B);    
+    xU = U+U';
 return
 end
